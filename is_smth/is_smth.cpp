@@ -14,6 +14,20 @@ struct is_void<void>
 };
 #pragma endregion
 
+
+#pragma region is_bool
+template<typename T>
+struct is_bool
+{
+    static const bool value = false;
+};
+template<>
+struct is_void<bool>
+{
+    static const bool value = true;
+};
+#pragma endregion
+
 #pragma region is_default_constructible
 
 namespace my {
